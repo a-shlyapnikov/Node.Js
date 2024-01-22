@@ -1,10 +1,7 @@
 const express = require('express');
-const fs = require('fs');
 const counter = require('./counter.js');
 
-
 const app = express();
-
 
 app.get('/', (req, res) => {
     res.send(`<h1>Добро пожаловать на мой сайт!</h1>
