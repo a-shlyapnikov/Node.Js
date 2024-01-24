@@ -5,13 +5,6 @@ function counter(page) {
     const pathToCounter = path.join(__dirname, 'counter.json');
     let counter;
     if (fs.existsSync(pathToCounter)) {
-        // counter = JSON.parse(fs.readFile(pathToCounter, 'utf-8', (err) => {
-        //     if (err) {
-        //         console.log(err.message);
-        //         res.status(500).send('Ошибка чтения файла');
-        //         return;
-        //     }
-        // }));
         counter = JSON.parse(fs.readFileSync(pathToCounter, 'utf-8'));
         if (!counter[page]) {
             counter[page] = 1;
