@@ -53,7 +53,6 @@ app.put('/users/:id', checkParams(idSchema), checkBody(putSchema), (req, res) =>
 
     if (user) {
         user = Object.assign(user, req.body);
-        // user = { ...user, ...req.body };
         console.log(user);
         fs.writeFileSync(pathToDb, JSON.stringify(users, null, 2), 'utf-8');
         res.send({ user })
